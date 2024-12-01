@@ -33,10 +33,33 @@
       <Button
         iconClass="ti {workspace.hasFocus ? 'ti-point-filled' : 'ti-point'}"
         class="text-zb-ws-{i}"
+        index={i}
         callback={() =>
           glazewm!.runCommand(`focus --workspace ${workspace.name}`)}
       />
     {/each}
+    <div class="flex items-center">
+      {#each glazewm.bindingModes as bindingMode, i}
+        <button 
+          onclick={() => {
+            switch (bindingMode.name.toLowerCase()) {
+              case "pause":
+                glazewm!.runCommand("wm-disable-binding-mode --name pause");
+                break;
+              
+              case "resize":
+                glazewm!.runCommand("wm-disable-binding-mode --name resize");
+                break;
+            
+              default:
+                break;
+            }
+          }}
+        >
+          {bindingMode.displayName ?? bindingMode.name}
+        </button>
+      {/each}
+    </div>
     <button
       aria-label="tiling-direction"
       class="flex items-center justify-center text-zb-tiling-direction"

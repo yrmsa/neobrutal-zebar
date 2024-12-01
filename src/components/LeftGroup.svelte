@@ -14,7 +14,7 @@
 </script>
 
 <div class="flex flex-row gap-3 items-center">
-  <Button class="text-zb-icon" iconClass="heart-filled" />
+  <Button class="text-zb-icon" iconClass="heartbeat" />
   <div class="flex gap-1 items-center">
     <i class="ti ti-ruler-2"></i>
     <Meter class="bg-zb-memory" percent={Math.round(memory?.usage ?? 0)} />

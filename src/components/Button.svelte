@@ -4,8 +4,9 @@
     label?: string;
     callback?: () => void;
     class: string;
+    index?: number;
   };
-  let { iconClass, label, callback, ...rest }: ButtonProps = $props();
+  let { iconClass, label, callback, index, ...rest }: ButtonProps = $props();
 </script>
 
 <button
@@ -13,5 +14,8 @@
   onclick={callback}
   aria-label={label}
 >
+  {#if index != undefined}
+    <span class="text-xs">{index+1}</span>
+  {/if}
   <i class="ti ti-{iconClass}"></i>
 </button>

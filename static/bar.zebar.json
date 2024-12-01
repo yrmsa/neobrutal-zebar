@@ -5,8 +5,9 @@
   "focused": false,
   "resizable": false,
   "transparent": true,
-  "defaultPlacements": [
+  "presets": [
     {
+      "name": "default",
       "anchor": "top_left",
       "offsetX": "0px",
       "offsetY": "0px",
@@ -14,6 +15,11 @@
       "height": "60px",
       "monitorSelection": {
         "type": "all"
+      },
+      "dockToEdge": {
+        "enabled": true,
+        "edge": null,
+        "windowMargin": "0px"
       }
     }
   ]

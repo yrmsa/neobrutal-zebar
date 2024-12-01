@@ -8,7 +8,8 @@
     MemoryOutput,
     DateOutput,
     NetworkOutput,
-    WeatherOutput
+    WeatherOutput,
+    IpOutput
   } from "zebar";
 
   import "../app.css";
@@ -29,7 +30,7 @@
     const providers = zebar.createProviderGroup({
       battery: { type: "battery" },
       cpu: { type: "cpu" },
-      date: { type: "date", formatting: "HH:mm" },
+      date: { type: "date", formatting: "ccc. d-LLL. HH:mm" },
       glazewm: { type: "glazewm" },
       memory: { type: "memory" },
       network: { type: "network" },
