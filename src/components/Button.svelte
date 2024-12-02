@@ -15,7 +15,7 @@
   aria-label={label}
 >
   {#if index != undefined}
-    <span class="text-xs">{index+1}</span>
+    <span class="text-xs">{index}</span>
   {/if}
   <i class="ti ti-{iconClass}"></i>
 </button>

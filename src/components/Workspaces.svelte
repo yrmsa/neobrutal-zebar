@@ -29,11 +29,11 @@
 
 {#if glazewm}
   <div class="flex flex-row gap-2 items-center">
-    {#each glazewm.currentWorkspaces as workspace, i}
+    {#each glazewm.currentWorkspaces as workspace}
       <Button
         iconClass="ti {workspace.hasFocus ? 'ti-point-filled' : 'ti-point'}"
-        class="text-zb-ws-{i}"
-        index={i}
+        class="text-zb-ws-{workspace.name}"
+        index={workspace.name}
         callback={() =>
           glazewm!.runCommand(`focus --workspace ${workspace.name}`)}
       />
