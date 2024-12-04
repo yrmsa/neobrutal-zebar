@@ -1,5 +1,10 @@
 <script lang="ts">
-  import type { DateOutput, GlazeWmOutput, NetworkOutput, WeatherOutput } from "zebar";
+  import type {
+    DateOutput,
+    GlazeWmOutput,
+    NetworkOutput,
+    WeatherOutput
+  } from "zebar";
   import NowPlaying from "./NowPlaying.svelte";
 
   type RightGroupProps = {
@@ -13,8 +18,8 @@
 </script>
 
 <div class="flex flex-row gap-3 items-center">
-  <NowPlaying glazewm={glazewm}/>
-  <div class="flex flex-row items-center gap-1">
+  <NowPlaying {glazewm} />
+  <div class="flex flex-row items-center gap-1 w-[150px]">
     {#if network?.defaultInterface?.type === "ethernet"}
       <i class="ti ti-network"></i>
     {:else if network?.defaultInterface!.type === "wifi"}
@@ -27,7 +32,9 @@
       {:else}
         <i class="ti ti-wifi-off"></i>
       {/if}
-      {network.defaultGateway?.ssid}
+      <p class="truncate" title={network?.defaultGateway?.ssid}>
+        {network.defaultGateway?.ssid}
+      </p>
     {:else}
       <i class="ti ti-wifi-off"></i>
     {/if}
