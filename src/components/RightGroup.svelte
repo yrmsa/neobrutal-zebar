@@ -19,7 +19,7 @@
 
 <div class="flex flex-row gap-3 items-center">
   <NowPlaying {glazewm} />
-  <div class="flex flex-row items-center gap-1 w-[150px]">
+  <div class="flex flex-row items-center gap-1 max-w-[150px]">
     {#if network?.defaultInterface?.type === "ethernet"}
       <i class="ti ti-network"></i>
     {:else if network?.defaultInterface!.type === "wifi"}

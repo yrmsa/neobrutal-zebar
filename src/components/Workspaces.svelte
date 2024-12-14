@@ -45,8 +45,8 @@
     >
       <i class="ti ti-switch-{glazewm?.tilingDirection}"></i>
     </button>
-    <div class="flex items-center">
-      {#each glazewm.bindingModes as bindingMode, i}
+    {#each glazewm.bindingModes as bindingMode, i}
+      <div class="flex items-center">
         <button class="pb-[4px]"
           onclick={() => {
             switch (bindingMode.name.toLowerCase()) {
@@ -65,8 +65,8 @@
         >
           {bindingMode.displayName ?? bindingMode.name}
         </button>
-      {/each}
-    </div>
+      </div>
+    {/each}
     <div class="flex items-center gap-1">
       {#if glazewm.focusedWorkspace}
         {#each glazewm.focusedWorkspace!.children as child}
