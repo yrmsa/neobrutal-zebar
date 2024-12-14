@@ -38,9 +38,16 @@
           glazewm!.runCommand(`focus --workspace ${workspace.name}`)}
       />
     {/each}
+    <button
+      aria-label="tiling-direction"
+      class="flex items-center justify-center text-zb-tiling-direction"
+      onclick={() => glazewm!.runCommand("toggle-tiling-direction")}
+    >
+      <i class="ti ti-switch-{glazewm?.tilingDirection}"></i>
+    </button>
     <div class="flex items-center">
       {#each glazewm.bindingModes as bindingMode, i}
-        <button 
+        <button class="pb-[4px]"
           onclick={() => {
             switch (bindingMode.name.toLowerCase()) {
               case "pause":
@@ -60,13 +67,6 @@
         </button>
       {/each}
     </div>
-    <button
-      aria-label="tiling-direction"
-      class="flex items-center justify-center text-zb-tiling-direction"
-      onclick={() => glazewm!.runCommand("toggle-tiling-direction")}
-    >
-      <i class="ti ti-switch-{glazewm?.tilingDirection}"></i>
-    </button>
     <div class="flex items-center gap-1">
       {#if glazewm.focusedWorkspace}
         {#each glazewm.focusedWorkspace!.children as child}
